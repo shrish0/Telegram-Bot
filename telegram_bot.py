@@ -1,9 +1,9 @@
+import os
 from telegram import Update, InputFile
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 
-# 🔑 Replace with your actual Telegram bot token
-
-TOKEN = "7371658331:AAEhVWKd28gz_pom91MX1wxfQ9314i-n6Fg"
+# Load environment variables
+TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")  # Get token from environment
 BOT_USERNAME = "@ShrishResumeBot"
 RESUME_PATH = "shrishRes.pdf"  # Ensure this file exists in the bot's directory
 
@@ -71,6 +71,9 @@ async def error(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 # 🚀 Main Function - Bot Setup
 def main():
+    if not TOKEN:
+        raise ValueError("❌ TELEGRAM_BOT_TOKEN environment variable is not set!")
+
     app = Application.builder().token(TOKEN).build()
 
     # Register Commands

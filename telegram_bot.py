@@ -155,22 +155,35 @@ async def coursework_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
 async def projects_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     projects_info = """🛠 **Projects**  
 
-1️⃣ **ShrishResumeBot** *(Python, Telegram API)*  
-   - A Telegram bot that shares resume details, projects, and achievements.  
+1️⃣ **Edu Bot** – *An Automated Educational Website for Physically Disabled Users*  
+   - **Designed and developed an educational website** with **voice command automation** for seamless learning.  
+   - Integrated **Google Search, YouTube, and ChatGPT**, allowing users to interact with content effortlessly.  
+   - Implemented **Google Assistant features** such as taking screenshots, writing notes, and opening saved screenshots.  
+   - **Tech Stack:** Selenium, Python, Django, BS4, HTML, CSS, JavaScript  
 
-2️⃣ **EDUBOT** *(HTML, CSS, JavaScript, Django, MySQL, Selenium, BS4)*  
-   - Voice-controlled website automation integrating Google Search, YouTube, and ChatGPT.  
+2️⃣ **Agri Core** – *A Smart Website for Farmers*  
+   🔗 [GitHub Repository](https://github.com/shrish0/Agri-Core)  
+   - Built a **Django-based web app** integrating **TensorFlow** for **plant disease detection** and **crop yield prediction**.  
+   - Features **weather-based activity suggestions**, an **e-commerce platform for farmers**, field trip registration, and a blog for **agricultural news and policies** with active government scheme links.  
+   - **Tech Stack:** Django, TensorFlow, HTML, CSS, JavaScript  
 
-3️⃣ **Carpooling Web App** *(MERN, Tailwind, DaisyUI)*  
-   - A ride-sharing platform that connects users on the same route.  
+3️⃣ **Work Flow** – *A Resource Management System*  
+   🔗 [GitHub Repository](https://github.com/shrish0/WorkFlow)  
+   - Developed a **comprehensive resource management web application** with advanced **user management, large data handling**, and **multi-level requisition processing**.  
+   - Supports **Excel import/export functionality** for efficient data management.  
+   - **Tech Stack:** ASP.NET Core MVC, ClosedXML, MS SQL 2022  
 
-4️⃣ **Admin Dashboard** *(ASP.NET MVC, Bootstrap, MS SQL 2022)*  
-   - A dashboard for managing products, orders, and users in an e-commerce platform.  
+4️⃣ **ShrishResumeBot** – *A Personal Resume Bot for Telegram*  
+   🔗 [GitHub Repository](https://github.com/shrish0/Telegram-Bot)  
+   - Created a **Telegram bot** that allows recruiters to view **personal details, academic background, projects, certifications, and achievements**.  
+   - Integrated **resume PDF download functionality** and structured interactive commands for easy navigation.  
+   - **Tech Stack:** Python, Telegram API, Python-Telegram-Bot Library  
 
-5️⃣ **Agri Core** *(Django, MySQL, TensorFlow, Bootstrap)*  
-   - A web app for plant disease detection, crop yield prediction, and farmer e-commerce integration.  
+5️⃣ **More Projects on GitHub**  
+   🔗 Browse additional projects on **GitHub:** [shrish0](https://github.com/shrish0)  
 """
     await update.message.reply_text(projects_info, parse_mode="Markdown")
+
 
 
 async def experience_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -194,16 +207,16 @@ def main():
 
     # Commands
     app.add_handler(CommandHandler("start", start_command))
-    app.add_handler(CommandHandler("certifications", certifications_command))
-    app.add_handler(CommandHandler("help", help_command))
-    app.add_handler(CommandHandler("resume", resume_command))
     app.add_handler(CommandHandler("personal", personal_command))
     app.add_handler(CommandHandler("academic", academic_command))
+    app.add_handler(CommandHandler("coursework", coursework_command))
     app.add_handler(CommandHandler("skills", skills_command))
     app.add_handler(CommandHandler("achievements", achievements_command))
-    app.add_handler(CommandHandler("coursework", coursework_command))
     app.add_handler(CommandHandler("projects", projects_command))
-    app.add_handler(CommandHandler("coursework", coursework_command))
+    app.add_handler(CommandHandler("experience", experience_command))
+    app.add_handler(CommandHandler("certifications", certifications_command))
+    app.add_handler(CommandHandler("resume", resume_command))
+    app.add_handler(CommandHandler("help", help_command))
 
 
 
